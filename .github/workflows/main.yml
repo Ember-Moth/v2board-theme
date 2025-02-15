@@ -1,0 +1,31 @@
+name: CI Pipeline
+
+on:
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出代码
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 设置 Node.js 环境
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # 选择你的 Node.js 版本
+
+      # 安装 pnpm
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      # 安装项目依赖
+      - name: Install dependencies
+        run: pnpm install
+
+      # 构建项目
+      - name: Build project
+        run: pnpm build
