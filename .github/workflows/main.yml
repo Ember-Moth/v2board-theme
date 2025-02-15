@@ -22,10 +22,17 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      # 安装项目依赖（禁用 frozen-lockfile）
+      # 安装项目依赖
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install
 
       # 构建项目
       - name: Build project
         run: pnpm build
+
+      # 上传打包后的文件
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts  # 指定上传文件的名称
+          path: dist/  # 你打包好的文件所在目录
