@@ -16,7 +16,7 @@ const config: DefaultConfigProps = {
   background_url: "",
   description: "slogan",
   logo: "logourl",
-  api: "后端API链接",
+  api: "http://api.zenith-flow.com:7001",
   languages: ["en-US","zh-CN","zh-TW"],
   emojiEndpoint: "https://cdn.jsdelivr.net/npm/emoji-datasource-apple/img/apple/64/{{code}}.png",
   startYear: 2021
