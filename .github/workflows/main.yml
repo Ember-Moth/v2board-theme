@@ -32,7 +32,7 @@ jobs:
 
       # 上传打包后的文件
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: build-artifacts  # 指定上传文件的名称
           path: dist/  # 你打包好的文件所在目录
