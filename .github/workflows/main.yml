@@ -22,9 +22,9 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      # 安装项目依赖
+      # 安装项目依赖（禁用 frozen-lockfile）
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       # 构建项目
       - name: Build project
